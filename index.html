@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Fisika Dasar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="dashboard-container" id="dashboardContainer">
+        <!-- Sidebar Samping -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Lab Fisika Dasar</h2>
+                <button class="close-btn" id="closeBtn">&times;</button>
+            </div>
+	<ul class="sidebar-menu">
+                <!-- Menu Semester Genap -->
+                <li class="has-submenu open">
+                    <a href="#" class="menu-toggle">Semester Gasal</a>
+                    <ul class="submenu">
+                        <li><a href="#" class="nav-link active" data-page="genap-modul">Modul</a></li>
+                        <li><a href="#" class="nav-link" data-page="genap-jadwal">Schedule</a></li>
+                    </ul>
+                </li>
+                <!-- Menu Semester Gasal -->
+                <li class="has-submenu open">
+                    <a href="#" class="menu-toggle">Semester Genap</a>
+                    <ul class="submenu">
+                        <li><a href="#" class="nav-link" data-page="gasal-modul">Modul</a></li>
+                        <li><a href="#" class="nav-link" data-page="gasal-jadwal">Schedule</a></li>
+                    </ul>
+                </li>
+               </ul>        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-navbar">
+                <button class="menu-btn" id="menuBtn" title="Buka/Tutup Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <h2 id="pageTitle">Modul Semester Genap</h2>
+            </header>
+
+            <div class="content-body">
+                
+                <!-- 1. SEMESTER GENAP - MODUL (PILIHAN KATEGORI: REGULER & IUP) -->
+                <section id="view-genap-modul" class="page-view active">
+                    <div class="header-intro">
+                        <h1>Modul Semester Gasal</h1>
+                        <p>Silakan pilih kategori kelas untuk melihat daftar modul pembelajaran.</p>
+                    </div>
+                    <div class="category-grid">
+                        <div class="category-card">
+                            <h3>Kelas Reguler</h3>
+                            <p>Kumpulan modul pembelajaran Gasal untuk kelas reguler.</p>
+                            <a href="#" class="btn-access open-category" data-semester="genap" data-category="reguler">Open</a>
+                        </div>
+                        <div class="category-card">
+                            <h3>Kelas IUP (International)</h3>
+                            <p>Kumpulan modul pembelajaran Gasal untuk kelas IUP.</p>
+                            <a href="#" class="btn-access open-category" data-semester="genap" data-category="iup">Open</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- HALAMAN LIST MODUL (Digunakan Bersama untuk Genap/Gasal) -->
+                <section id="view-modul-list" class="page-view">
+                    <div class="header-intro">
+                        <button class="btn-back" id="backToBeranda">&larr; Kembali ke Pilihan Kategori</button>
+                        <h1 id="modulListHeading">Daftar Modul</h1>
+                        <p id="modulListSub">Pilih modul di bawah ini untuk membuka file PDF.</p>
+                        <div class="search-box">
+                            <input type="text" id="searchInput" placeholder="Cari judul modul atau materi...">
+                        </div>
+                    </div>
+                    <div class="module-grid" id="moduleContainer"></div>
+                </section>
+
+                <!-- 2. SEMESTER GENAP - SCHEDULE -->
+                <section id="view-genap-jadwal" class="page-view">
+                    <div class="header-intro">
+                        <h1>Schedule Semester Gasal</h1>
+                        <p>Silakan pilih kategori kelas untuk melihat jadwal PDF Semester Gasal.</p>
+                    </div>
+                    <div class="category-grid">
+                        <div class="category-card">
+                            <h3>Kelas Reguler</h3>
+                            <p>Buka dokumen PDF jadwal Semester Gasal kelas reguler.</p>
+                            <a href="Kalender1.pdf" class="btn-access" target="_blank">Open</a>
+                        </div>
+                        <div class="category-card">
+                            <h3>Kelas IUP</h3>
+                            <p>Buka dokumen PDF jadwal Semester Gasal kelas IUP.</p>
+                            <a href="Schedule1.pdf" class="btn-access" target="_blank">Open</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. SEMESTER GASAL - MODUL -->
+                <section id="view-gasal-modul" class="page-view">
+                    <div class="header-intro">
+                        <h1>Modul Semester Genap</h1>
+                        <p>Silakan pilih kategori kelas untuk melihat daftar modul pembelajaran.</p>
+                    </div>
+                    <div class="category-grid">
+                        <div class="category-card">
+                            <h3>Kelas Reguler</h3>
+                            <p>Kumpulan modul pembelajaran Genap untuk kelas reguler.</p>
+                            <a href="#" class="btn-access open-category" data-semester="gasal" data-category="reguler">Open</a>
+                        </div>
+                        <div class="category-card">
+                            <h3>Kelas IUP (International)</h3>
+                            <p>Kumpulan modul pembelajaran Genap untuk kelas IUP.</p>
+                            <a href="#" class="btn-access open-category" data-semester="gasal" data-category="iup">Open</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. SEMESTER GASAL - SCHEDULE -->
+                <section id="view-gasal-jadwal" class="page-view">
+                    <div class="header-intro">
+                        <h1>Schedule Semester Genap</h1>
+                        <p>Silakan pilih kategori kelas untuk melihat jadwal PDF Semester Genap.</p>
+                    </div>
+                    <div class="category-grid">
+                        <div class="category-card">
+                            <h3>Kelas Reguler</h3>
+                            <p>Jadwal Semester Genap kelas reguler.</p>
+                            <a href="jadwal-gasal-reguler.pdf" class="btn-access" target="_blank">Open</a>
+                        </div>
+                        <div class="category-card">
+                            <h3>Kelas IUP</h3>
+                            <p>Jadwal Semester Genap kelas IUP.</p>
+                            <a href="jadwal-gasal-iup.pdf" class="btn-access" target="_blank">Open</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. HALAMAN PENGATURAN -->
+                <section id="view-pengaturan" class="page-view">
+                    <div class="header-intro">
+                        <h1>Pengaturan Wallpaper</h1>
+                        <p>Sesuaikan warna latar belakang dashboard sesuai selera Anda.</p>
+                    </div>
+                    <div class="settings-card">
+                        <h3>Pilih Warna Latar Belakang (Solid)</h3>
+                        <div class="color-options">
+                            <button class="color-btn" style="background-color: #f1f5f9;" data-color="#f1f5f9" title="Default Slate"></button>
+                            <button class="color-btn" style="background-color: #fdf2f8;" data-color="#fdf2f8" title="Soft Pink"></button>
+                            <button class="color-btn" style="background-color: #f0fdf4;" data-color="#f0fdf4" title="Soft Green"></button>
+                            <button class="color-btn" style="background-color: #fffbeb;" data-color="#fffbeb" title="Soft Yellow"></button>
+                            <button class="color-btn" style="background-color: #0f172a;" data-color="#0f172a" title="Dark Mode"></button>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <script src="script.js"></script>
+</body>
+</html>

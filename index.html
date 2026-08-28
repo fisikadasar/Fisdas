@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab Fisika Dasar</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-	<link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/png" href="logo.png">
 </head>
 <body>
 
@@ -18,8 +17,8 @@
                 <h2>Lab Fisika Dasar</h2>
                 <button class="close-btn" id="closeBtn">&times;</button>
             </div>
-	<ul class="sidebar-menu">
-                <!-- Menu Semester Genap -->
+            <ul class="sidebar-menu">
+                <!-- Menu Semester Gasal -->
                 <li class="has-submenu open">
                     <a href="#" class="menu-toggle">Semester Gasal</a>
                     <ul class="submenu">
@@ -27,7 +26,7 @@
                         <li><a href="#" class="nav-link" data-page="genap-jadwal">Schedule</a></li>
                     </ul>
                 </li>
-                <!-- Menu Semester Gasal -->
+                <!-- Menu Semester Genap -->
                 <li class="has-submenu open">
                     <a href="#" class="menu-toggle">Semester Genap</a>
                     <ul class="submenu">
@@ -35,9 +34,12 @@
                         <li><a href="#" class="nav-link" data-page="gasal-jadwal">Schedule</a></li>
                     </ul>
                 </li>
-
-				<li><a href="#" class="nav-link" data-page="peminjaman-alat">Peminjaman Alat</a></li>
-               </ul>        </aside>
+                <!-- Menu Peminjaman Alat -->
+                <li><a href="#" class="nav-link" data-page="peminjaman-alat">Peminjaman Alat</a></li>
+                <!-- Pengaturan -->
+                <li><a href="#" class="nav-link" data-page="pengaturan">Pengaturan</a></li>
+            </ul>
+        </aside>
 
         <!-- Main Content -->
         <main class="main-content">
@@ -47,12 +49,13 @@
                     <span></span>
                     <span></span>
                 </button>
-                <h2 id="pageTitle">Modul Semester Genap</h2>
+                <h2 id="pageTitle">Modul Semester Gasal</h2>
+                <button class="btn-logout-fixed" onclick="logout()" title="Logout">Logout</button>
             </header>
 
             <div class="content-body">
                 
-                <!-- 1. SEMESTER GENAP - MODUL (PILIHAN KATEGORI: REGULER & IUP) -->
+                <!-- 1. SEMESTER GENAP - MODUL -->
                 <section id="view-genap-modul" class="page-view active">
                     <div class="header-intro">
                         <h1>Modul Semester Gasal</h1>
@@ -72,14 +75,14 @@
                     </div>
                 </section>
 
-                <!-- HALAMAN LIST MODUL (Digunakan Bersama untuk Genap/Gasal) -->
+                <!-- HALAMAN LIST MODUL -->
                 <section id="view-modul-list" class="page-view">
                     <div class="header-intro">
                         <button class="btn-back" id="backToBeranda">&larr; Kembali ke Pilihan Kategori</button>
                         <h1 id="modulListHeading">Daftar Modul</h1>
-                        <p id="modulListSub">Pilih modul di bawah ini untuk membuka file PDF.</p>
+                        <p id="modulListSub">Pilih modul di bawah ini untuk mengunduh file PDF.</p>
                         <div class="search-box">
-                            <input type="text" id="searchInput" placeholder="Cari judul modul atau materi...">
+                            <input type="text" id="searchModulInput" placeholder="Cari judul modul atau materi...">
                         </div>
                     </div>
                     <div class="module-grid" id="moduleContainer"></div>
@@ -94,13 +97,13 @@
                     <div class="category-grid">
                         <div class="category-card">
                             <h3>Kelas Reguler</h3>
-                            <p>Buka dokumen PDF jadwal Semester Gasal kelas reguler.</p>
-                            <a href="Kalender1.pdf" class="btn-access" target="_blank">Open</a>
+                            <p>Unduh dokumen PDF jadwal Semester Gasal kelas reguler.</p>
+                            <a href="Kalender1.pdf" class="btn-access" download>Download PDF</a>
                         </div>
                         <div class="category-card">
                             <h3>Kelas IUP</h3>
-                            <p>Buka dokumen PDF jadwal Semester Gasal kelas IUP.</p>
-                            <a href="Schedule1.pdf" class="btn-access" target="_blank">Open</a>
+                            <p>Unduh dokumen PDF jadwal Semester Gasal kelas IUP.</p>
+                            <a href="Schedule1.pdf" class="btn-access" download>Download PDF</a>
                         </div>
                     </div>
                 </section>
@@ -135,29 +138,133 @@
                         <div class="category-card">
                             <h3>Kelas Reguler</h3>
                             <p>Jadwal Semester Genap kelas reguler.</p>
-                            <a href="jadwal-gasal-reguler.pdf" class="btn-access" target="_blank">Open</a>
+                            <a href="jadwal-gasal-reguler.pdf" class="btn-access" download>Download PDF</a>
                         </div>
                         <div class="category-card">
                             <h3>Kelas IUP</h3>
                             <p>Jadwal Semester Genap kelas IUP.</p>
-                            <a href="jadwal-gasal-iup.pdf" class="btn-access" target="_blank">Open</a>
+                            <a href="jadwal-gasal-iup.pdf" class="btn-access" download>Download PDF</a>
                         </div>
                     </div>
                 </section>
 
+                <!-- 5. PEMINJAMAN ALAT (PRESENSI) -->
+                <section id="view-peminjaman-alat" class="page-view">
+                    <div class="header-intro">
+                        <h1>Presensi Pengambilan Data</h1>
+                        <p>Silakan isi form di bawah ini untuk melakukan presensi peminjaman alat.</p>
+                    </div>
 
-<!-- HALAMAN PEMINJAMAN ALAT (Full Layar) -->
-<section id="view-peminjaman-alat" class="page-view">
-    <div class="iframe-container">
-        <iframe src="https://fisikadasar.github.io/presensi-app/" title="Peminjaman Alat"></iframe>
-    </div>
-</section>
+                    <form id="formData">
+                        <div class="input-group">
+                            <input type="text" id="Nama" required>
+                            <label>Nama</label>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="text" id="NIU" required>
+                            <label>NIU</label>
+                        </div>
+
+                        <div class="input-group">
+                            <select id="Kelas" required>
+                                <option value="" disabled selected hidden></option>
+                                <option>Fisika</option>
+                                <option>Geofisika</option>
+                                <option>IUP Physics</option>
+                            </select>
+                            <label>Kelas</label>
+                        </div>
+
+                        <div class="input-group">
+                            <select id="KodeJudul" required>
+                                <option value="" disabled selected hidden></option>
+                                <option>Percepatan Gravitasi</option>
+                                <option>Viskositas</option>
+                                <option>Hukum Boyle</option>
+                                <option>Pendinginan Air</option>
+                                <option>Getaran Teredam</option>
+                                <option>Konstanta Pegas</option>
+                                <option>Aliran Air Dalam Pipa Kapiler</option>
+                                <option>Osilasi Batang</option>
+                                <option>Kesetaraan Kalor-Listrik</option>
+                                <option>Osiloskop</option>
+                                <option>Gravitational Acceleration</option>
+                                <option>VISCOSITY OF LIQUID</option>
+                                <option>Boyle’s Law</option>
+                                <option>Cooling of water</option>
+                                <option>Rod Oscillation</option>
+                                <option>OSCILLOSCOPE</option>
+                            </select>
+                            <label>Judul</label>
+                        </div>
+
+                        <button type="submit">Kirim</button>
+                    </form>
+
+                    <h3 style="margin-top: 40px; text-align: center; color: white;">Data Terkumpul</h3>
+                    <div class="table-wrapper">
+                        <div class="filter-container">
+                            <input type="text" id="searchPresensiInput" placeholder="🔍 Cari Nama / NIU / Kelas...">
+
+                            <select id="filterKode">
+                                <option value="">Semua Judul</option>
+                                <option>Percepatan Gravitasi</option>
+                                <option>Viskositas</option>
+                                <option>Hukum Boyle</option>
+                                <option>Pendinginan Air</option>
+                                <option>Getaran Teredam</option>
+                                <option>Konstanta Pegas</option>
+                                <option>Aliran Air Dalam Pipa Kapiler</option>
+                                <option>Osilasi Batang</option>
+                                <option>Kesetaraan Kalor-Listrik</option>
+                                <option>Osiloskop</option>
+                                <option>Gravitational Acceleration</option>
+                                <option>VISCOSITY OF LIQUID</option>
+                                <option>Boyle’s Law</option>
+                                <option>Cooling of water</option>
+                                <option>Rod Oscillation</option>
+                                <option>OSCILLOSCOPE</option>
+                            </select>
+
+                            <input type="date" id="filterTanggal">
+
+                            <select id="rowsPerPage">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="all">Semua</option>
+                            </select>
+
+                            <button class="btn-excel" onclick="downloadExcel()">⬇ Excel</button>
+                        </div>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th onclick="sortTable('Nama')">Nama</th>
+                                    <th onclick="sortTable('NIU')">NIU</th>
+                                    <th onclick="sortTable('Kelas')">Kelas</th>
+                                    <th onclick="sortTable('Kode')">Kode</th>
+                                    <th onclick="sortTable('Waktu')">Waktu</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dataTable"></tbody>
+                        </table>
+                        <div id="pagination" class="pagination"></div>
+                        <button id="btnHapusSemua" class="btn-hapus-semua" onclick="hapusSemua()" style="display: none;">
+                            🗑 Hapus Semua
+                        </button>
+                    </div>
+                </section>
+
+
 
             </div>
         </main>
     </div>
 
     <div class="overlay" id="overlay"></div>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>

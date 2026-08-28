@@ -36,8 +36,6 @@
                 </li>
                 <!-- Menu Peminjaman Alat -->
                 <li><a href="#" class="nav-link" data-page="peminjaman-alat">Peminjaman Alat</a></li>
-                <!-- Pengaturan -->
-                <li><a href="#" class="nav-link" data-page="pengaturan">Pengaturan</a></li>
             </ul>
         </aside>
 
@@ -50,7 +48,6 @@
                     <span></span>
                 </button>
                 <h2 id="pageTitle">Modul Semester Gasal</h2>
-                <button class="btn-logout-fixed" onclick="logout()" title="Logout">Logout</button>
             </header>
 
             <div class="content-body">
@@ -150,9 +147,11 @@
 
                 <!-- 5. PEMINJAMAN ALAT (PRESENSI) -->
                 <section id="view-peminjaman-alat" class="page-view">
-                    <div class="header-intro">
-                        <h1>Presensi Pengambilan Data</h1>
-                        <p>Silakan isi form di bawah ini untuk melakukan presensi peminjaman alat.</p>
+                    <button class="btn-logout-fixed" onclick="logout()">Logout</button>
+                    
+                    <div class="header-presensi-title">
+                        <h2>Presensi Pengambilan Data</h2>
+                        <p>Silakan isi form di bawah ini untuk melakukan presensi.</p>
                     </div>
 
                     <form id="formData">
@@ -202,7 +201,7 @@
                         <button type="submit">Kirim</button>
                     </form>
 
-                    <h3 style="margin-top: 40px; text-align: center; color: white;">Data Terkumpul</h3>
+                    <h3 class="presensi-subtitle">Data Terkumpul</h3>
                     <div class="table-wrapper">
                         <div class="filter-container">
                             <input type="text" id="searchPresensiInput" placeholder="🔍 Cari Nama / NIU / Kelas...">
@@ -257,8 +256,6 @@
                         </button>
                     </div>
                 </section>
-
-
 
             </div>
         </main>

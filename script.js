@@ -69,7 +69,7 @@ const modulListHeading = document.getElementById('modulListHeading');
 const pageViews = document.querySelectorAll('.page-view');
 const navLinks = document.querySelectorAll('.nav-link');
 
-// Fungsi Render Modul (Dilengkapi Atribut Download)
+// Fungsi Render Modul
 function displayModules(semester, category) {
     if (!moduleContainer) return;
     moduleContainer.innerHTML = '';
@@ -120,18 +120,18 @@ const backBtn = document.getElementById('backToBeranda');
 if (backBtn) {
     backBtn.addEventListener('click', () => {
         pageViews.forEach(v => v.classList.remove('active'));
-        if (currentSemester === 'gasal') {
-            document.getElementById('view-gasal-modul').classList.add('active');
+        if (currentSemester === 'genap') {
+            document.getElementById('view-genap-modul').classList.add('active');
             pageTitle.innerText = "Modul Semester Gasal";
         } else {
-            document.getElementById('view-genap-modul').classList.add('active');
+            document.getElementById('view-gasal-modul').classList.add('active');
             pageTitle.innerText = "Modul Semester Genap";
         }
         if (searchModulInput) searchModulInput.value = '';
     });
 }
 
-// Navigasi Sidebar Utama (Sub-menu & Halaman)
+// Navigasi Sidebar Utama
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
@@ -142,35 +142,23 @@ navLinks.forEach(link => {
         pageViews.forEach(v => v.classList.remove('active'));
 
         if (page === 'genap-modul') {
-            document.getElementById('view-gasal-modul').classList.add('active');
-            pageTitle.innerText = "Modul Semester Gasal";
-            currentSemester = 'gasal';
-        } else if (page === 'gasal-jadwal') {
-            document.getElementById('view-gasal-jadwal').classList.add('active');
-            pageTitle.innerText = "Schedule Semester Gasal";
-        } else if (page === 'genap-modul') {
             document.getElementById('view-genap-modul').classList.add('active');
-            pageTitle.innerText = "Modul Semester Genap";
+            pageTitle.innerText = "Modul Semester Gasal";
             currentSemester = 'genap';
         } else if (page === 'genap-jadwal') {
+            document.getElementById('view-genap-jadwal').classList.add('active');
+            pageTitle.innerText = "Schedule Semester Gasal";
+        } else if (page === 'gasal-modul') {
+            document.getElementById('view-gasal-modul').classList.add('active');
+            pageTitle.innerText = "Modul Semester Genap";
+            currentSemester = 'gasal';
+        } else if (page === 'gasal-jadwal') {
             document.getElementById('view-gasal-jadwal').classList.add('active');
             pageTitle.innerText = "Schedule Semester Genap";
         } else if (page === 'peminjaman-alat') {
             document.getElementById('view-peminjaman-alat').classList.add('active');
             pageTitle.innerText = "Peminjaman Alat";
-        } else if (page === 'pengaturan') {
-            document.getElementById('view-pengaturan').classList.add('active');
-            pageTitle.innerText = "Pengaturan";
         }
-    });
-});
-
-// Fitur Ganti Warna Wallpaper
-const colorButtons = document.querySelectorAll('.color-btn');
-colorButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const color = btn.getAttribute('data-color');
-        document.documentElement.style.setProperty('--bg-color', color);
     });
 });
 

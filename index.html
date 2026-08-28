@@ -18,23 +18,23 @@
                 <button class="close-btn" id="closeBtn">&times;</button>
             </div>
             <ul class="sidebar-menu">
-                <!-- Menu Semester Gasal -->
+                <!-- 1. Menu Semester Gasal (Paling Atas) -->
                 <li class="has-submenu open">
                     <a href="#" class="menu-toggle">Semester Gasal</a>
                     <ul class="submenu">
-                        <li><a href="#" class="nav-link active" data-page="genap-modul">Modul</a></li>
-                        <li><a href="#" class="nav-link" data-page="genap-jadwal">Schedule</a></li>
-                    </ul>
-                </li>
-                <!-- Menu Semester Genap -->
-                <li class="has-submenu open">
-                    <a href="#" class="menu-toggle">Semester Genap</a>
-                    <ul class="submenu">
-                        <li><a href="#" class="nav-link" data-page="gasal-modul">Modul</a></li>
+                        <li><a href="#" class="nav-link active" data-page="gasal-modul">Modul</a></li>
                         <li><a href="#" class="nav-link" data-page="gasal-jadwal">Schedule</a></li>
                     </ul>
                 </li>
-                <!-- Menu Peminjaman Alat -->
+                <!-- 2. Menu Semester Genap -->
+                <li class="has-submenu open">
+                    <a href="#" class="menu-toggle">Semester Genap</a>
+                    <ul class="submenu">
+                        <li><a href="#" class="nav-link" data-page="genap-modul">Modul</a></li>
+                        <li><a href="#" class="nav-link" data-page="genap-jadwal">Schedule</a></li>
+                    </ul>
+                </li>
+                <!-- 3. Menu Peminjaman Alat -->
                 <li><a href="#" class="nav-link" data-page="peminjaman-alat">Peminjaman Alat</a></li>
             </ul>
         </aside>
@@ -52,8 +52,8 @@
 
             <div class="content-body">
                 
-                <!-- 1. SEMESTER GENAP - MODUL -->
-                <section id="view-genap-modul" class="page-view active">
+                <!-- 1. SEMESTER GASAL - MODUL (DEFAULT AWAL) -->
+                <section id="view-gasal-modul" class="page-view active">
                     <div class="header-intro">
                         <h1>Modul Semester Gasal</h1>
                         <p>Silakan pilih kategori kelas untuk melihat daftar modul pembelajaran.</p>
@@ -62,17 +62,17 @@
                         <div class="category-card">
                             <h3>Kelas Reguler</h3>
                             <p>Kumpulan modul pembelajaran Gasal untuk kelas reguler.</p>
-                            <a href="#" class="btn-access open-category" data-semester="genap" data-category="reguler">Open</a>
+                            <a href="#" class="btn-access open-category" data-semester="gasal" data-category="reguler">Open</a>
                         </div>
                         <div class="category-card">
                             <h3>Kelas IUP (International)</h3>
                             <p>Kumpulan modul pembelajaran Gasal untuk kelas IUP.</p>
-                            <a href="#" class="btn-access open-category" data-semester="genap" data-category="iup">Open</a>
+                            <a href="#" class="btn-access open-category" data-semester="gasal" data-category="iup">Open</a>
                         </div>
                     </div>
                 </section>
 
-                <!-- HALAMAN LIST MODUL -->
+                <!-- HALAMAN LIST MODUL (Bersama) -->
                 <section id="view-modul-list" class="page-view">
                     <div class="header-intro">
                         <button class="btn-back" id="backToBeranda">&larr; Kembali ke Pilihan Kategori</button>
@@ -85,8 +85,8 @@
                     <div class="module-grid" id="moduleContainer"></div>
                 </section>
 
-                <!-- 2. SEMESTER GENAP - SCHEDULE -->
-                <section id="view-genap-jadwal" class="page-view">
+                <!-- 2. SEMESTER GASAL - SCHEDULE -->
+                <section id="view-gasal-jadwal" class="page-view">
                     <div class="header-intro">
                         <h1>Schedule Semester Gasal</h1>
                         <p>Silakan pilih kategori kelas untuk melihat jadwal PDF Semester Gasal.</p>
@@ -95,18 +95,18 @@
                         <div class="category-card">
                             <h3>Kelas Reguler</h3>
                             <p>Unduh dokumen PDF jadwal Semester Gasal kelas reguler.</p>
-                            <a href="Kalender1.pdf" class="btn-access" download>Download PDF</a>
+                            <a href="jadwal-gasal-reguler.pdf" class="btn-access" download>Download PDF</a>
                         </div>
                         <div class="category-card">
                             <h3>Kelas IUP</h3>
                             <p>Unduh dokumen PDF jadwal Semester Gasal kelas IUP.</p>
-                            <a href="Schedule1.pdf" class="btn-access" download>Download PDF</a>
+                            <a href="jadwal-gasal-iup.pdf" class="btn-access" download>Download PDF</a>
                         </div>
                     </div>
                 </section>
 
-                <!-- 3. SEMESTER GASAL - MODUL -->
-                <section id="view-gasal-modul" class="page-view">
+                <!-- 3. SEMESTER GENAP - MODUL -->
+                <section id="view-genap-modul" class="page-view">
                     <div class="header-intro">
                         <h1>Modul Semester Genap</h1>
                         <p>Silakan pilih kategori kelas untuk melihat daftar modul pembelajaran.</p>
@@ -115,18 +115,18 @@
                         <div class="category-card">
                             <h3>Kelas Reguler</h3>
                             <p>Kumpulan modul pembelajaran Genap untuk kelas reguler.</p>
-                            <a href="#" class="btn-access open-category" data-semester="gasal" data-category="reguler">Open</a>
+                            <a href="#" class="btn-access open-category" data-semester="genap" data-category="reguler">Open</a>
                         </div>
                         <div class="category-card">
                             <h3>Kelas IUP (International)</h3>
                             <p>Kumpulan modul pembelajaran Genap untuk kelas IUP.</p>
-                            <a href="#" class="btn-access open-category" data-semester="gasal" data-category="iup">Open</a>
+                            <a href="#" class="btn-access open-category" data-semester="genap" data-category="iup">Open</a>
                         </div>
                     </div>
                 </section>
 
-                <!-- 4. SEMESTER GASAL - SCHEDULE -->
-                <section id="view-gasal-jadwal" class="page-view">
+                <!-- 4. SEMESTER GENAP - SCHEDULE -->
+                <section id="view-genap-jadwal" class="page-view">
                     <div class="header-intro">
                         <h1>Schedule Semester Genap</h1>
                         <p>Silakan pilih kategori kelas untuk melihat jadwal PDF Semester Genap.</p>
@@ -135,12 +135,12 @@
                         <div class="category-card">
                             <h3>Kelas Reguler</h3>
                             <p>Jadwal Semester Genap kelas reguler.</p>
-                            <a href="jadwal-gasal-reguler.pdf" class="btn-access" download>Download PDF</a>
+                            <a href="Kalender1.pdf" class="btn-access" download>Download PDF</a>
                         </div>
                         <div class="category-card">
                             <h3>Kelas IUP</h3>
                             <p>Jadwal Semester Genap kelas IUP.</p>
-                            <a href="jadwal-gasal-iup.pdf" class="btn-access" download>Download PDF</a>
+                            <a href="Schedule1.pdf" class="btn-access" download>Download PDF</a>
                         </div>
                     </div>
                 </section>

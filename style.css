@@ -11,19 +11,14 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background: var(--bg-color, url('background.png') center/cover no-repeat fixed);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url('background.png') center/cover no-repeat fixed;
   color: white;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: background-color 0.3s ease;
 }
 
-/* Blur Overlay Utama untuk Background */
 body::before {
   content: "";
   position: fixed;
@@ -41,7 +36,7 @@ body::before {
   position: relative;
 }
 
-/* ================= SIDEBAR (Glassmorphism) ================= */
+/* ================= SIDEBAR ================= */
 .sidebar {
   width: 260px;
   background: rgba(255, 255, 255, 0.1);
@@ -101,7 +96,6 @@ body::before {
   border-left: 4px solid #00ffcc;
 }
 
-/* Sub-menu Sidebar */
 .sidebar-menu .submenu {
   list-style: none;
   background: rgba(0, 0, 0, 0.2);
@@ -154,16 +148,10 @@ body::before {
   padding: 16px 30px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   position: sticky;
   top: 0;
   z-index: 99;
-}
-
-.top-navbar div-left {
-  display: flex;
-  align-items: center;
 }
 
 .top-navbar h2 {
@@ -193,24 +181,10 @@ body::before {
   border-radius: 2px;
 }
 
-.btn-logout-fixed {
-  padding: 6px 14px;
-  border: none;
-  border-radius: 8px;
-  background: linear-gradient(45deg, #ff4b2b, #ff416c);
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
-  font-size: 0.85rem;
-}
-
-.btn-logout-fixed:hover {
-  transform: scale(1.05);
-}
-
 /* ================= CONTENT BODY & VIEWS ================= */
 .content-body {
   padding: 30px;
+  position: relative;
 }
 
 .page-view {
@@ -237,7 +211,6 @@ body::before {
   margin-bottom: 20px;
 }
 
-/* Tombol Kembali */
 .btn-back {
   background: rgba(255, 255, 255, 0.2);
   border: none;
@@ -264,7 +237,7 @@ body::before {
   gap: 20px;
 }
 
-.category-card, .module-card, .card-box, .settings-card {
+.category-card, .module-card {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -282,7 +255,7 @@ body::before {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-.category-card h3, .module-info h3, .settings-card h3 {
+.category-card h3, .module-info h3 {
   font-size: 1.1rem;
   color: white;
   margin-bottom: 8px;
@@ -294,8 +267,7 @@ body::before {
   margin-bottom: 20px;
 }
 
-/* ================= SEARCH BOX ================= */
-.search-box input, #searchPresensiInput {
+.search-box input {
   width: 100%;
   max-width: 400px;
   padding: 10px 16px;
@@ -308,11 +280,10 @@ body::before {
   backdrop-filter: blur(10px);
 }
 
-.search-box input::placeholder, #searchPresensiInput::placeholder {
+.search-box input::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* ================= BUTTON ACCESS & FORM ================= */
 .btn-access {
   display: inline-block;
   padding: 8px 16px;
@@ -333,7 +304,54 @@ body::before {
   opacity: 0.9;
 }
 
-/* FORM PRESENSI */
+/* ================= PRESENSI / PEMINJAMAN ALAT STYLING ================= */
+#view-peminjaman-alat {
+  position: relative;
+}
+
+.header-presensi-title {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.header-presensi-title h2 {
+  font-size: 2rem;
+  color: white;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.header-presensi-title p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+}
+
+.presensi-subtitle {
+  text-align: center;
+  color: white;
+  margin: 35px 0 15px 0;
+  font-size: 1.5rem;
+}
+
+.btn-logout-fixed {
+  position: absolute;
+  top: -15px;
+  right: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #ff4b2b, #ff416c);
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s;
+  font-size: 0.85rem;
+}
+
+.btn-logout-fixed:hover {
+  transform: scale(1.05);
+}
+
 form#formData {
   max-width: 600px;
   margin: 0 auto;
@@ -403,7 +421,6 @@ form#formData button[type="submit"]:hover {
   transform: scale(1.03);
 }
 
-/* ================= TABLE & FILTER ================= */
 .table-wrapper {
   width: 100%;
   max-width: 1000px;
@@ -416,7 +433,7 @@ form#formData button[type="submit"]:hover {
   grid-template-columns: 2fr 1fr 1fr 0.7fr auto;
   gap: 10px;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .filter-container input,
@@ -433,6 +450,15 @@ form#formData button[type="submit"]:hover {
 
 .filter-container input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(1);
+}
+
+#searchPresensiInput {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
 }
 
 .btn-excel {
@@ -527,36 +553,6 @@ tr:hover {
 
 .pagination button.active {
   background: #00c6ff;
-}
-
-/* ================= SETTINGS WALLPAPER ================= */
-.settings-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 24px;
-  border-radius: 12px;
-  max-width: 500px;
-}
-
-.color-options {
-  display: flex;
-  gap: 15px;
-  margin-top: 15px;
-}
-
-.color-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  cursor: pointer;
-  transition: transform 0.2s, border-color 0.2s;
-}
-
-.color-btn:hover {
-  transform: scale(1.1);
-  border-color: #00ffcc;
 }
 
 /* ================= OVERLAY & RESPONSIVE ================= */

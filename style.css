@@ -362,16 +362,21 @@ body::before {
     display: block;
   }
 }
-/* ================= IFRAME CONTAINER ================= */
+/* ================= IFRAME FULLSCREEN CONTAINER ================= */
+#view-peminjaman-alat {
+  padding: 0 !important; /* Menghilangkan jarak padding bawaan content-body */
+  height: calc(100vh - 65px); /* Menyesuaikan tinggi layar dikurangi tinggi navbar atas */
+  overflow: hidden;
+}
+
 .iframe-container {
   width: 100%;
-  height: 75vh; /* Tinggi menyesuaikan layar */
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  height: 100%;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
 .iframe-container iframe {

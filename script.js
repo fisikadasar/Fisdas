@@ -151,9 +151,9 @@ navLinks.forEach(link => {
         } else if (page === 'gasal-jadwal') {
             document.getElementById('view-gasal-jadwal').classList.add('active');
             pageTitle.innerText = "Schedule Semester Genap";
-        } else if (page === 'pengaturan') {
-            document.getElementById('view-pengaturan').classList.add('active');
-            pageTitle.innerText = "Pengaturan";
+		} else if (page === 'peminjaman-alat') { 
+            document.getElementById('view-peminjaman-alat').classList.add('active');
+            pageTitle.innerText = "Peminjaman Alat";
         }
     });
 });
